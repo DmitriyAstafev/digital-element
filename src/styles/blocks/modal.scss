@@ -1,0 +1,111 @@
+.modal {
+  background: rgba(31, 63, 104, 0.4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  &__close {
+    font-size: 30px;
+    font-weight: 900;
+    color: $blue_1;
+    align-self: end;
+    cursor: pointer;
+  }
+
+  &__window {
+    background: $mainColor;
+    display: flex;
+    flex-direction: column;
+    box-shadow: fade($blueShadow, 40%);
+    border-radius: 10px;
+    padding: 2vh 2vw;
+
+    &--title {
+      @include font20(GilroyBold, $blue_1);
+      margin-bottom: 3vh;
+
+      @media (max-height: 320px) {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    &--lable {
+      @include font16(GilroyReg, $blue_1);
+      opacity: 1;
+      font-weight: normal;
+      margin: 1vh 0;
+
+      textarea {
+        resize: none;
+      }
+    }
+
+    &--input {
+      width: 100%;
+      border: 1px solid $blue_3;
+      box-sizing: border-box;
+      border-radius: 10px;
+      padding: 1vh 1.5vw;
+      margin-top: 0.5vh;
+
+      &.error {
+        border-color: red;
+      }
+
+      &::placeholder {
+        color: fade($blue_1, 20%);
+      }
+    }
+
+    &--btn {
+      @extend .tmpbtn;
+      border: none;
+      margin-top: 3vh;
+    }
+  }
+}
+
+.modal-popup {
+  background: rgba(31, 63, 104, 0.4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  &__close {
+    font-size: 30px;
+    font-weight: 900;
+    color: $blue_1;
+    align-self: end;
+    cursor: pointer;
+  }
+
+  &__message {
+    @include font20 (GilroyReg, $blue_1);
+    background: $mainColor;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: fade($blueShadow, 40%);
+    border-radius: 10px;
+    padding: 2vh 2vw;
+
+    & p {
+        text-align: center;
+        margin-top: 10%;
+    }
+  }
+}

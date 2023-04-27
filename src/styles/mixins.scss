@@ -1,0 +1,75 @@
+//Mixins
+@mixin font16($fontFamily, $color) {
+  font-family: $fontFamily;
+  color: $color;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  line-height: 26px;
+  opacity: 0.6;
+
+  @media ($breakpoint-tab) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media ($breakpoint-sm) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@mixin font20($fontFamily, $color) {
+  font-family: $fontFamily;
+  color: $color;
+  letter-spacing: 0.05em;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@mixin font36($fontFamily, $color) {
+  font-family: $fontFamily;
+  color: $color;
+  letter-spacing: 0.05em;
+  font-size: 36px;
+  line-height: 46px;
+
+  @media ($breakpoint-mb) {
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  @media ($breakpoint-sm) {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+
+@mixin beforeTxt($text) {
+  content: $text;
+  font-family: GilroyBold;
+  color: $mainColor;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  line-height: 26px;
+  margin-right: 1rem;
+}
+
+// Templates
+.tmpbtn {
+  @include font16(GilroyReg, $mainColor);
+  opacity: 1;
+  display: flex;
+  letter-spacing: 0.04em;
+  background-color: $blue_4;
+  padding: 1em 2em;
+  box-shadow: 5px 10px 20px fade($blue_3, 20%);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($blue_4, 10%);
+  }
+}

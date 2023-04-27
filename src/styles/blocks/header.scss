@@ -1,0 +1,82 @@
+.header {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    0deg,
+    rgba(152, 195, 232, 0.2) 8.84%,
+    rgba(152, 195, 232, 0) 31.12%
+  );
+
+  @media ($breakpoint-tab) {
+    background-color: fade($mainColor, 30%);
+    height: auto;
+  }
+
+  &__img {
+    position: absolute;
+    right: 24px;
+    top: 100px;
+    z-index: -1;
+
+    @media ($breakpoint-tab) {
+      width: 40vw;
+      height: auto;
+      top: 15vh;
+    }
+
+    @media ($breakpoint-mb) {
+      width: 70vw;
+      height: auto;
+      top: 15vh;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 83px 0px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5vw;
+    padding-left: 10vw;
+    padding-right: 30vw;
+    &-title {
+      font-family: GalienBold;
+      color: $blue_1;
+      font-size: 64px;
+      line-height: 74px;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5em;
+
+      @media ($breakpoint-sm) {
+        font-size: 78px;
+        line-height: 88px;
+      }
+
+      @media ($breakpoint-tab) {
+        font-size: 45px;
+        line-height: 45px;
+      }
+
+      @media ($breakpoint-mb) {
+        font-size: 34px;
+        line-height: 39px;
+      }
+    }
+    &-subtitle {
+      @include font16(GilroyReg, $blue_1);
+      padding-right: 10vw;
+      margin-bottom: 10vh;
+    }
+    &-btn {
+      @extend .tmpbtn;
+
+      @media ($breakpoint-tab) {
+        margin-bottom: 10vh;
+      }
+    }
+  }
+}

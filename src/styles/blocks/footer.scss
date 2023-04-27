@@ -1,0 +1,10 @@
+.footer {
+  background: $blue_4;
+  border-radius: 200px 0 0 0;
+  @media ($breakpoint-mb) {
+    border-radius: 100px 0 0 0;
+  }
+}
+
+@import "our-client";
+@import "info";

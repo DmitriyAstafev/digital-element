@@ -1,0 +1,130 @@
+.info {
+    background: $blue_2;
+    border-radius: 0px 200px 0px 0px;
+    margin-right: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media ($breakpoint-mb) {
+        border-radius: 0px 100px 0px 0px;
+    }
+
+    &__talk {
+        padding: 5vw 0 5vw 14vw ;
+        margin-right: 14vw;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);;
+        width: 90%;
+
+        @media ($breakpoint-mb) {
+            flex-direction: column;
+        }
+
+        &-content {
+            &-title {
+                @include font36(GilroyBold, $mainColor);
+                width: 10em;
+
+                @media ($breakpoint-tab) {
+                    width: auto;
+                }
+            }
+
+            &-text {
+                @include font16 (GilroyReg, $mainColor);
+                width: 50%;
+
+                @media ($breakpoint-tab) {
+                    width: 100%;
+                }
+            }
+        }
+
+        &-btn {
+            margin: 1vw;
+
+            @media ($breakpoint-mb) {
+                margin-top: 3vh;
+            }
+
+            a {
+                white-space: nowrap;
+                @extend .tmpbtn
+            }
+        }
+    }
+
+
+     &__bar {
+         display: flex;
+        align-self: flex-start;
+        padding: 5vw 10vw;
+
+        @media ($breakpoint-mb) {
+            flex-direction: column;
+        }
+
+        &-contacts{
+            display: flex;
+            align-items: center;
+
+            &-img {
+                width: 48px;
+                padding: 8px 0;
+                margin-right: 0.5rem;
+            }
+
+            &-title {
+                font-family: GilroyBold;
+                font-size: 28px;
+                line-height: 46px;
+                letter-spacing: 0.02em;
+                color: $mainColor;
+            }
+        }
+
+        &-ul {
+            margin: 0 2vw;
+
+            ul {
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            &:first-child {
+                margin-right: 10vw;
+
+            }
+        }
+
+        &-title {
+            @include font20(GilroyBold, $mainColor);
+        }
+
+        &-elem {
+            @include font16(GilroyReg, $mainColor);
+            opacity: 1;
+            list-style-type: none; 
+            margin: 0.5rem 0;
+
+            a {
+                text-decoration: none;
+                color: $mainColor;
+            }
+        }
+
+        .afrianska::before {
+            @include beforeTxt('A.');
+        }
+
+        .phone::before {
+            @include beforeTxt('T.');
+        }
+
+        .email::before {
+            @include beforeTxt('E.');
+        }
+    }
+}

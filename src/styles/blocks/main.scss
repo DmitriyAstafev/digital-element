@@ -1,0 +1,157 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us {
+    display: inline-grid;
+    grid-template: repeat(4, 20rem) / repeat(2, 30rem);
+    margin: 10rem;
+
+    @media ($breakpoint-sm) {
+        grid-template: repeat(4, 23rem) / repeat(2, 30rem);
+        margin: 5rem 1rem;
+    }
+
+    @media ($breakpoint-tab) {
+        grid-template: repeat(4, 23rem) / repeat(2, 17rem);
+        margin: 5rem 1rem;
+    }
+
+    @media ($breakpoint-mb) {
+        grid-template-columns:  1fr;
+        grid-template-rows: repeat(7, 1fr);
+        margin: 5rem 1rem;
+    }
+
+    &__title {
+        @include font36(GilroyBold, $blue_2);
+        grid-row: 1;
+        grid-column: 1;
+        padding-right: 2em;
+    }
+
+    &__tile {
+        margin: 2rem;
+        background: $mainColor;
+        box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+
+        @media ($breakpoint-tab) {
+            margin: 1rem;
+        }
+
+        @media ($breakpoint-mb) {
+            margin: 0.5rem;
+        }
+
+        &-img {
+            @media ($breakpoint-tab) {
+                height: 96px;
+                margin-top: 2rem;
+            }
+        }
+
+        .elems {
+            position: absolute;
+            top: -30px;
+        }
+
+        &-content {
+            width: 70%;
+            margin: 2rem;
+
+            .content__title {
+                margin-bottom: 1em;
+                @include font20(GilroyBold, $blue_1);
+            }
+
+            .content__text {
+                @include font16(GilroyReg, $blue_1);
+            }
+        }
+
+        &-link {
+            margin-left: 3rem;
+            margin-bottom: 3rem;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            
+            .link__text {
+                font-family: GilroyReg;
+                color: $blue_4;
+                font-size: 14px;
+                line-height: 30px;
+            }
+
+            .link_arrow {
+                position: relative;
+                width: 24px;
+                height: 3px;
+                background-color: $blue_4;
+                display: block;
+                margin-left: 1em;
+            }
+            .link_arrow::after {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 3px;
+                top: -3px;
+                right: -2px;
+                background-color: $blue_4;
+                transform: rotate(45deg);
+            }
+            .link_arrow::before {
+                content: '';
+                position: absolute;
+                width: 12px;
+                height: 3px;
+                top: 3px;
+                right: -2px;
+                background-color: $blue_4;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .tile1 {
+        grid-row: 1 / 3;
+        grid-column: 2;
+
+        @media ($breakpoint-mb) {
+            grid-row: 2 / 4;
+            grid-column: 1;
+        }
+    }
+
+    .tile2 {
+        grid-row: 2 / 4;
+        grid-column: 1;
+        
+        @media ($breakpoint-mb) {
+            grid-row: 4 / 6;
+            grid-column: 1;
+        }
+    }
+
+    .tile3 {
+        grid-row: 3 / 5;
+        grid-column: 2;
+
+        @media ($breakpoint-mb) {
+            grid-row: 6 / 8;
+            grid-column: 1; 
+        }
+    }
+
+}

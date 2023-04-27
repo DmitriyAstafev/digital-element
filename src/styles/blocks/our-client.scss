@@ -1,0 +1,63 @@
+.our-client {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6vh 14vw;
+
+    &__title {
+        @include font36 (GilroyBold, $mainColor);
+        width: 15rem;
+    }
+
+    &__text {
+        margin-left: 7rem;
+        width: 50%;
+        @include font16 (GilroyReg, $mainColor);
+
+        @media ($breakpoint-tab) {
+            margin: 1vw;
+            width: 100%;
+        }
+    }
+
+    &__logos {
+        display: grid;
+        grid-template: repeat(2, 128px) / repeat(4, 235px);
+        text-align: center;
+        margin: 3rem;
+        list-style-type: none;
+        padding-left: 0;
+
+        @media ($breakpoint-tab) {
+            grid-template: repeat(2, 3.5rem) / repeat(4, 8rem);
+        }
+        @media ($breakpoint-mb) {
+            grid-template: repeat(2, 4rem) / repeat(4, 5rem);
+        }
+    }
+    &__logos-elems {
+        @include font20(GilroyReg, $mainColor);
+        line-height: 46px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-left-width: 0;
+        border-top-width: 0;
+        padding: 17% 0%;
+        &:nth-child(4n) {
+            border-right-width: 0;
+        }
+
+        @media ($breakpoint-tab) {
+            @include font16(GilroyReg, $mainColor);
+            opacity: 1;
+            padding: 15% 0%;
+        }
+    
+        &:nth-child(n+5){
+            border-bottom-width: 0;
+        }
+    
+        &.more {
+            background: rgba(31, 63, 104, 0.2);
+        }
+    }
+}
